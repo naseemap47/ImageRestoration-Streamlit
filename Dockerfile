@@ -9,6 +9,7 @@ RUN apt-get update && \
     libsm6 \
     libxext6
 WORKDIR /home
+RUN pip install torch torchvision torchaudio
 RUN pip install -r requirements.txt
 RUN pip install --upgrade --no-cache-dir gdown
 RUN python3 setup.py develop --no_cuda_ext
