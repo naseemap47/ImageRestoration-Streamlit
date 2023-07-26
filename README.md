@@ -2,6 +2,9 @@
 [<img src="https://img.shields.io/badge/Docker-Image-blue.svg?logo=docker">](<https://hub.docker.com/repository/docker/naseemap47/streamlit-nafnet>) <br>
 Restore image using NAFNet model with streamlit dashboard
 
+## Dashboard
+![demo](https://github.com/naseemap47/ImageRestoration-Streamlit/assets/88816150/6081cfa5-96f8-4ff0-ba5c-d85723e025aa)
+
 ## Installtion
 1. **Clone this Repo**
 ```
