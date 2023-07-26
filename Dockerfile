@@ -12,5 +12,6 @@ WORKDIR /home
 RUN pip install -r requirements.txt
 RUN pip install --upgrade --no-cache-dir gdown
 RUN python3 setup.py develop --no_cuda_ext
+RUN pip install streamlit
 RUN python3 -c "import gdown;gdown.download('https://drive.google.com/uc?id=14D4V4raNYIOhETfcuuLI3bGLB-OYIv6X', './experiments/pretrained_models/', quiet=False)"
 CMD [ "streamlit", "run", "app.py" ]
