@@ -16,8 +16,7 @@ python3 setup.py develop --no_cuda_ext
 ```
 ## Download pretrained models
 ```
-import gdown
-gdown.download('https://drive.google.com/uc?id=14D4V4raNYIOhETfcuuLI3bGLB-OYIv6X', "./experiments/pretrained_models/", quiet=False)
+python3 -c "import gdown;gdown.download('https://drive.google.com/uc?id=14D4V4raNYIOhETfcuuLI3bGLB-OYIv6X', './experiments/pretrained_models/', quiet=False)"
 ```
 ## Run Dashboard
 ```
