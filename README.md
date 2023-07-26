@@ -16,7 +16,8 @@ python3 setup.py develop --no_cuda_ext
 ```
 ## Download pretrained models
 ```
-gdown 'https://drive.google.com/uc?id=14D4V4raNYIOhETfcuuLI3bGLB-OYIv6X' -O 'experiments/pretrained_models/NAFNet-REDS-width64.pth'
+import gdown
+gdown.download('https://drive.google.com/uc?id=14D4V4raNYIOhETfcuuLI3bGLB-OYIv6X', "./experiments/pretrained_models/", quiet=False)
 ```
 ## Run Dashboard
 ```
