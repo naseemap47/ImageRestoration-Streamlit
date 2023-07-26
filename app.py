@@ -46,8 +46,8 @@ if upload_img_file is not None:
     img_input = cv2.imdecode(file_bytes, 1)
     FRAME_WINDOW.image(img_input, channels='BGR')
 
-if st.button('Submit', use_container_width=True):
-    st.subheader('Result')
-    inp = img2tensor(img_input)
-    out_img = single_image_inference(NAFNet, inp)
-    st.image(out_img, channels='BGR')
+    if st.button('Submit', use_container_width=True):
+        st.subheader('Result')
+        inp = img2tensor(img_input)
+        out_img = single_image_inference(NAFNet, inp)
+        st.image(out_img, channels='BGR')
