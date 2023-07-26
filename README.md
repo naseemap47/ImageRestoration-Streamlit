@@ -13,6 +13,7 @@ cd ImageRestoration-Streamlit
 pip install -r requirements.txt
 pip install --upgrade --no-cache-dir gdown
 python3 setup.py develop --no_cuda_ext
+pip install streamlit
 ```
 ## Download pretrained models
 ```
