@@ -26,3 +26,7 @@ python3 -c "import gdown;gdown.download('https://drive.google.com/uc?id=14D4V4ra
 ```
 streamlit run app.py
 ```
+## User Guide
+1. Upload image - (Click -> **Browse files**)
+2. To restore image (Click -> **Submit**)
+3. Download restored image - (Click -> **Download Image**)
