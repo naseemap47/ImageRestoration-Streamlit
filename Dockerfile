@@ -9,7 +9,7 @@ RUN apt-get update && \
     libsm6 \
     libxext6
 WORKDIR /home
-RUN pip install torch torchvision torchaudio
+RUN pip install torch==2.0.0+cu117 torchvision==0.15.1+cu117 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117
 RUN pip install -r requirements.txt
 RUN pip install --upgrade --no-cache-dir gdown
 RUN python3 setup.py develop --no_cuda_ext
