@@ -4,6 +4,7 @@ from basicsr.utils import img2tensor as _img2tensor, tensor2img
 from basicsr.utils.options import parse
 import numpy as np
 import cv2
+import io
 
 
 def img2tensor(img, bgr2rgb=False, float32=True):
@@ -25,6 +26,14 @@ def single_image_inference(model, img):
 	visuals = model.get_current_visuals()
 	sr_img = tensor2img([visuals['result']])
 	return sr_img
+
+def get_image_handler(img_arr):
+    ret, img_encode = cv2.imencode('.jpg', img_arr)
+    str_encode = img_encode.tobytes()
+    img_byteio = io.BytesIO(str_encode)
+    img_byteio.name = 'image.jpg'
+    reader = io.BufferedReader(img_byteio)
+    return reader
 
 
 opt_path = 'options/test/REDS/NAFNet-width64.yml'
@@ -51,3 +60,12 @@ if upload_img_file is not None:
         inp = img2tensor(img_input)
         out_img = single_image_inference(NAFNet, inp)
         st.image(out_img, channels='BGR')
+
+        # Download Button
+        btn = st.download_button(
+            label="Download Image",
+            data=get_image_handler(out_img),
+            file_name="image.jpg",
+            mime="image/jpg",
+            use_container_width=True
+        )
