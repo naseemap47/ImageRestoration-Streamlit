@@ -11,8 +11,25 @@ Restore image using NAFNet model with streamlit dashboard
 git clone https://github.com/naseemap47/ImageRestoration-Streamlit.git
 cd ImageRestoration-Streamlit
 ```
-2. **Install Libraries**
+2. **Install Libraries**<br>
+**With pip**
 ```
+pip install torch==2.0.0+cu117 torchvision==0.15.1+cu117 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu117
+pip install -r requirements.txt
+pip install --upgrade --no-cache-dir gdown
+python3 setup.py develop --no_cuda_ext
+pip install streamlit
+```
+**With conda (Recommended)**
+```
+conda create -n app python=3.9 -y
+conda activate app
+
+# Linux and Windows
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+# OSX
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 -c pytorch
+
 pip install -r requirements.txt
 pip install --upgrade --no-cache-dir gdown
 python3 setup.py develop --no_cuda_ext
